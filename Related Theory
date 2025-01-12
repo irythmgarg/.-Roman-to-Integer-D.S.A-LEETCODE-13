@@ -1,0 +1,36 @@
+Theory Explanation:
+Roman Numerals System:
+
+Roman numerals are made up of seven symbols: I, V, X, L, C, D, and M. These symbols represent specific values.
+For most cases, Roman numerals are added to get the total value (e.g., VIII = 5 + 1 + 1 + 1 = 8).
+However, when a smaller numeral appears before a larger numeral (e.g., IV = 5 - 1 = 4), subtraction is used.
+Mapping Roman Numerals to Integers:
+
+We use an unordered map (mp) to store the integer value for each Roman numeral character.
+Processing the String:
+
+We iterate through the Roman numeral string. For each character:
+If the current character represents a smaller value than the next character (indicating a subtraction case, such as IV), we subtract the current value from the next.
+Otherwise, we simply add the value of the current character to the total.
+Skipping Processed Characters:
+
+When a subtraction case is encountered (e.g., IV), we increment the index (i++) to skip over the next character since it's already part of the subtraction.
+Space Complexity:
+Auxiliary Space:
+
+We use an unordered map to store the Roman numeral values, which takes constant space because there are only seven possible Roman numeral characters.
+The space used for storing the result (ans) is also constant.
+Final Space Complexity: O(1), as the space used is independent of the size of the input string.
+
+Time Complexity:
+Processing the String:
+
+We iterate through the input string s exactly once, performing constant-time operations (lookups in the map and simple additions/subtractions) for each character. This takes O(n) time, where n is the length of the string.
+Map Lookup:
+
+Each lookup in the unordered map (mp[s[i]]) takes constant time, O(1).
+Final Time Complexity: O(n), where n is the length of the string.
+Overall Complexity:
+Time Complexity: O(n), where n is the length of the Roman numeral string.
+Space Complexity: O(1), as we only use a fixed amount of space regardless of the input size.
+This solution efficiently converts a Roman numeral string into an integer by iterating through the string once, using a map for constant-time lookups. The time complexity is O(n), and the space complexity is O(1), making it both time-efficient and space-efficient.
